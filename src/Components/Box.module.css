@@ -1,0 +1,393 @@
+.root {
+	box-sizing: border-box;
+	display: inline-flex;
+	flex-direction: column;
+	position: relative;
+	min-height: calc(var(--border-slice-bottom)*1px + var(--border-slice-top)*1px + 8px);
+	padding: 8px 4px 4px 4px;
+
+	--border-image-fg: url(../Assets/elements/standard/box-std-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-std-bg.svg);
+	--border-slice-top: 17;
+	--border-slice-bottom: 17;
+	--border-slice-left: 17;
+	--border-slice-right: 17;
+}
+
+.border {
+	position: absolute;
+	left: 4px;
+	right: 4px;
+	top: 4px;
+	bottom: 4px;
+	border-style: solid;
+	border-color: transparent;
+	box-sizing: border-box;
+	border-image-slice:
+		var(--border-slice-top)
+		var(--border-slice-right)
+		var(--border-slice-bottom)
+		var(--border-slice-left)
+		fill;
+	border-width:
+		calc(var(--border-slice-top)*1px)
+		calc(var(--border-slice-right)*1px)
+		calc(var(--border-slice-bottom)*1px)
+		calc(var(--border-slice-left)*1px);
+	pointer-events: none;
+}
+
+.border.fg {
+	border-image-source: var(--border-image-fg);
+}
+
+.border.bg {
+	border-image-source: var(--border-image-bg);
+}
+
+.label {
+	position: relative;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 4px 4px 4px;
+	font-size: 8px;	
+}
+
+.contents {
+	flex: 1;
+	box-sizing: border-box;
+	padding: 10px;
+	position: relative;
+}
+
+.lined .contents {
+	background: linear-gradient(
+		transparent 14px,
+		var(--color-bg-element) 14px,
+		var(--color-bg-element) 15px,
+		transparent 15px);
+	background-size: 15px 15px;
+}
+
+.stacked1 {
+	--border-image-fg: url(../Assets/elements/standard/box-stacked1-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-stacked1-bg.svg);
+	--border-slice-top: 16;
+	--border-slice-bottom: 36;
+	--border-slice-left: 17;
+	--border-slice-right: 17;
+}
+
+.stacked2 {
+	--border-image-fg: url(../Assets/elements/standard/box-stacked2-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-stacked2-bg.svg);
+	--border-slice-top: 32;
+	--border-slice-bottom: 32;
+	--border-slice-left: 17;
+	--border-slice-right: 17;
+}
+
+.stacked3 {
+	--border-image-fg: url(../Assets/elements/standard/box-stacked3-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-stacked3-bg.svg);
+	--border-slice-top: 36;
+	--border-slice-bottom: 16;
+	--border-slice-left: 17;
+	--border-slice-right: 17;
+}
+
+.stacked1.root,
+.stacked2.root {
+	padding-bottom: 2px;
+}
+
+.stacked1 > .border,
+.stacked2 > .border {
+	bottom: 2px;	
+}
+
+.stacked2 > .border,
+.stacked3 > .border {
+	top: 2px;	
+}
+
+.proficiencies {
+	--border-image-fg: url(../Assets/elements/standard/box-proficiencies-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-proficiencies-bg.svg);
+	--border-slice-top: 10;
+	--border-slice-bottom: 10;
+	--border-slice-left: 10;
+	--border-slice-right: 10;
+}
+
+.proficiencies > .border {
+	left: 2px;
+	right: 2px;
+}
+
+.attacks {
+	--border-image-fg: url(../Assets/elements/standard/box-attacks-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-attacks-bg.svg);
+	--border-slice-top: 16;
+	--border-slice-bottom: 38;
+	--border-slice-left: 20;
+	--border-slice-right: 20;
+}
+
+.attacks > .border {
+	left: 1px;
+	right: 1px;
+}
+
+.features {
+	--border-image-fg: url(../Assets/elements/standard/box-features-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-features-bg.svg);
+	--border-slice-top: 16;
+	--border-slice-bottom: 38;
+	--border-slice-left: 20;
+	--border-slice-right: 20;
+}
+
+.features > .border {
+	left: 1px;
+	right: 1px;
+}
+
+.skills {
+	--border-image-fg: url(../Assets/elements/standard/box-skills-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-skills-bg.svg);
+	--border-slice-top: 56;
+	--border-slice-bottom: 56;
+	--border-slice-left: 18;
+	--border-slice-right: 18;
+}
+
+.skills > .border {
+	left: 2px;
+	right: 2px;
+}
+
+.bg-main {
+	--border-image-fg: none;
+	--border-image-bg: url(../Assets/elements/standard/bg-main.svg);
+	--border-slice-top: 32;
+	--border-slice-bottom: 32;
+	--border-slice-left: 96;
+	--border-slice-right: 96;
+}
+
+.bg-stats {
+	--border-image-fg: none;
+	--border-image-bg: url(../Assets/elements/standard/bg-stats.svg);
+	--border-slice-top: 36;
+	--border-slice-bottom: 36;
+	--border-slice-left: 0;
+	--border-slice-right: 0;
+}
+
+.bg-stats > .contents {
+	margin: 16px 0;
+	padding: 4px;
+}
+
+.stat-str.root,
+.stat-dex.root,
+.stat-con.root,
+.stat-int.root,
+.stat-wis.root,
+.stat-cha.root {
+	min-height: auto;
+	height: 84px;
+	width: 72px;
+	padding-top: 2px;
+	padding-bottom: 28px;
+}
+
+.stat-str > .border,
+.stat-dex > .border,
+.stat-con > .border,
+.stat-int > .border,
+.stat-wis > .border,
+.stat-cha > .border {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.stat-str > .label,
+.stat-dex > .label,
+.stat-con > .label,
+.stat-int > .label,
+.stat-wis > .label,
+.stat-cha > .label {
+	order: 1;
+	/*padding: 2px 0 0 0;*/
+}
+
+.stat-str > .contents,
+.stat-dex > .contents,
+.stat-con > .contents,
+.stat-int > .contents,
+.stat-wis > .contents,
+.stat-cha > .contents {
+	order: 2;
+}
+
+.stat-str {
+	--border-image-fg: url(../Assets/elements/standard/stat-1-str-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-1-str-bg.svg);
+}
+
+.stat-dex {
+	--border-image-fg: url(../Assets/elements/standard/stat-2-dex-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-2-dex-bg.svg);
+}
+
+.stat-con {
+	--border-image-fg: url(../Assets/elements/standard/stat-3-con-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-3-con-bg.svg);
+}
+
+.stat-int {
+	--border-image-fg: url(../Assets/elements/standard/stat-4-int-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-4-int-bg.svg);
+}
+
+.stat-wis {
+	--border-image-fg: url(../Assets/elements/standard/stat-5-wis-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-5-wis-bg.svg);
+}
+
+.stat-cha {
+	--border-image-fg: url(../Assets/elements/standard/stat-6-cha-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/stat-6-cha-bg.svg);
+}
+
+.label-round {
+	--border-image-fg: url(../Assets/elements/standard/label-round-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/label-round-bg.svg);
+	--border-slice-top: 0;
+	--border-slice-bottom: 0;
+	--border-slice-left: 46;
+	--border-slice-right: 16;
+}
+
+.label-flattened {
+	--border-image-fg: url(../Assets/elements/standard/label-flattened-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/label-flattened-bg.svg);
+	--border-slice-top: 0;
+	--border-slice-bottom: 0;
+	--border-slice-left: 50;
+	--border-slice-right: 16;
+}
+
+.label-square {
+	--border-image-fg: url(../Assets/elements/standard/label-square-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/label-square-bg.svg);
+	--border-slice-top: 0;
+	--border-slice-bottom: 0;
+	--border-slice-left: 42;
+	--border-slice-right: 16;
+}
+
+.label-round.root,
+.label-flattened.root,
+.label-square.root {
+	min-height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-top: 4px;
+}
+
+.label-round.root {
+	height: 56px;
+}
+
+.label-flattened.root,
+.label-square.root {
+	height: 46px;
+}
+
+.label-round > .contents,
+.label-flattened > .contents,
+.label-square > .contents {
+	padding: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.label-round > .contents {
+	flex-basis: 43px;
+}
+
+.label-flattened > .contents {
+	flex-basis: 43px;
+}
+
+.label-square > .contents {
+	flex-basis: 37px;
+}
+
+.label-round > .label,
+.label-flattened > .label,
+.label-square > .label {
+	padding: 0;
+	flex: 1;
+}
+
+.ac {
+	--border-image-fg: url(../Assets/elements/standard/box-ac-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/box-ac-bg.svg);
+	--border-slice-top: 0;
+	--border-slice-bottom: 0;
+	--border-slice-left: 0;
+	--border-slice-right: 0;
+}
+
+.ac.root {
+	min-height: auto;
+	height: 74px;
+	width: 68px;
+	padding: 12px 8px 6px 8px;
+}
+
+.ac > .border {
+	left: 2px;
+	right: 2px;
+	top: 0;
+	bottom: 0;
+}
+
+.ac > .contents {
+	padding: 6px;
+}
+
+.header {
+	--border-image-fg: url(../Assets/elements/standard/header-fg.svg);
+	--border-image-bg: url(../Assets/elements/standard/header-bg.svg);
+	--border-slice-top: 0;
+	--border-slice-bottom: 0;
+	--border-slice-left: 404;
+	--border-slice-right: 97;
+	height: 131px;
+}
+
+.header::before {
+	content: '';
+	position: absolute;
+	left: -24px;
+	top: 0;
+	right: -12px;
+	bottom: 0;
+	background-image: url(../Assets/elements/standard/header-bg.svg);
+	background-size: 100% 100%;
+}
+
+.header > .border {
+	left: -24px;
+	right: -12px;
+}
+
+/* lines: 11/12 rem */;
