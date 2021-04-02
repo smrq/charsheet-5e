@@ -9,7 +9,7 @@ import styles from './App.module.css';
 function App() {
 	return (
 		<div className={styles.root}>
-			<Page zoom={1}>
+			<Page>
 				<div style={{
 					width: '100%',
 					height: '100%',

@@ -374,17 +374,6 @@
 	height: 131px;
 }
 
-.header::before {
-	content: '';
-	position: absolute;
-	left: -24px;
-	top: 0;
-	right: -12px;
-	bottom: 0;
-	background-image: url(../Assets/elements/standard/header-bg.svg);
-	background-size: 100% 100%;
-}
-
 .header > .border {
 	left: -24px;
 	right: -12px;
